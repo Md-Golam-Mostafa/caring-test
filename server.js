@@ -36,6 +36,7 @@ app.get('/', (req, res) => {
     res.send(`Zooming care rest api server working on port ${port}`);
 });
 
+// api call
 app.use("/api/getUsers", userRoutes);
 app.use("/api/getAgents", agentRoutes);
 // app.use("/sessions", sessionRoutes);
