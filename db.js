@@ -6,7 +6,10 @@ const client = new Client({
     host: "ec2-50-19-32-96.compute-1.amazonaws.com",
     database: "d6c11j2dmr9444",
     password: "c10a98af4f1c6b08768e5c0129ac9604f7d84ffe78cc6306409bb0a1823c7782",
-    port: 5432
+    port: 5432,
+    ssl: {
+        rejectUnauthorized: false,
+    }
 
 })
 
