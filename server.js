@@ -10,14 +10,6 @@ const agentRoutes = require("./src/agents/agents_routes");
 
 const app = express();
 const port = process.env.PORT || 5000;
-
-app.use(express.static(path.join(__dirname, "build")));
-app.get('/api', (req, res) => {
-    res.json({
-        message: 'Welcome Zooming api endpoint'
-    })
-})
-
 // app.use(express.static("./../../../client/build"));
 
 // if (process.env.NODE_ENV === 'production') {
@@ -44,8 +36,8 @@ app.get('/', (req, res) => {
     res.send(`Zooming care rest api server working on port ${port}`);
 });
 
-app.use("/users", userRoutes);
-app.use("/agents", agentRoutes);
+app.use("/api/getUsers", userRoutes);
+app.use("/api/getAgents", agentRoutes);
 // app.use("/sessions", sessionRoutes);
 
 app.get("/*", (req, res) => {
